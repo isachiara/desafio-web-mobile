@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editar Pessoa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<style>
+    h2{
+        background: cadetblue;
+        color: white;
+        font-size: 41px;
+        text-align:center;
+    }
+    label{
+        margin-bottom: 0 !important;
+        font-weight: bold;
+    }
+    .container{
+        text-align: center;
+    }
+    #formDivContent{
+        background-color:ghostwhite;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Editar Pessoa: {{person.name}} {{person.lastname}}</h2>
+        <form method="POST">
+            <div class="col-xs-12" id="formDivContent">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="fieldWrapper form-group">
+                    {{ form.name.errors }}
+                    <div class="col-md-12">
+                        <label for="{{ form.name.id_for_label }}">Nome:</label>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+                        {{ form.name }}
+                    </div>
+                </div>
+                <div class="fieldWrapper form-group">
+                    {{ form.lastname.errors }}
+                    <div class="col-md-12">
+                        <label for="{{ form.lastname.id_for_label }}">Sobrenome:</label>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom:10px">
+                        {{ form.lastname }}
+                    </div>
+                </div>
+                <div class="fieldWrapper form-group">
+                    {{ form.email.errors }}
+                    <div class="col-md-12">
+                        <label for="{{ form.email.id_for_label }}">E-mail:</label>
+                    </div>
+
+                    <div class="col-md-12" style="margin-bottom:10px">
+                        {{ form.email }}
+                    </div>
+                </div>
+                <div class="fieldWrapper form-group">
+                    {{ form.password.errors }}
+                    <div class="col-md-12">
+                        <label for="{{ form.password.id_for_label }}">Senha:</label>
+                    </div>
+                    <div class="col-md-12">
+                        {{ form.password }}
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <hr>
+                    <button class="btn btn-primary" type="submit">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </body>
+</html>
+
