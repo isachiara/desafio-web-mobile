@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
 
-CSRF_COOKIE_SECURE = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Application definition
 
