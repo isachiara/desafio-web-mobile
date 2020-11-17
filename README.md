@@ -41,3 +41,5 @@ python manage.py makemigrations application
 
 ## 2. Aplicação Android
 
+Uma aplicação Android que faz um login request ao Django.
+
